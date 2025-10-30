@@ -1,0 +1,147 @@
+`html
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JKI1016 | গেমিং সাইট</title>
+<style>
+  body {
+    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5; color: #333;
+  }
+  header {
+    background: #2a3f54; color: white; padding: 15px 20px;
+  }
+  nav a {
+    color: #9fc5f8; text-decoration: none; margin: 0 15px; font-weight: 600;
+  }
+  nav a:hover {
+    color: #ffffff;
+  }
+  .container {
+    max-width: 1100px; margin: 20px auto; padding: 0 15px;
+  }
+  h1 {
+    color: #1b3a68;
+  }
+  footer {
+    text-align: center; padding: 15px; background: #2a3f54; color: white; margin-top: 40px;
+  }
+  section {
+    background: white; padding: 20px; margin-bottom: 20px; border-radius: 6px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  }
+  .lang-switch {
+    float: right; margin-top: -40px;
+  }
+  button.lang-btn {
+    background: #1b3a68; color: white; border: none; padding: 5px 10px;
+    cursor: pointer; border-radius: 4px; margin-left: 5px;
+  }
+  button.lang-btn:hover {
+    background: #294e8f;
+  }
+</style>
+</head><section id="deposit">
+    <h2 data-lang-key="deposit">ডিপোজিট</h2>
+    <p data-lang-key="deposit-desc">আপনি সহজেই আপনার অ্যাকাউন্টে টাকা যোগ করতে পারবেন বিভিন্ন পদ্ধতিতে।</p>
+  </section>
+
+  <section id="withdraw">
+    <h2 data-lang-key="withdraw">উইদ্রো</h2>
+    <p data-lang-key="withdraw-desc">আপনি আপনার জয়লাভ সহজেই উত্তোলন করতে পারবেন দ্রুত ও নিরাপদ পদ্ধতিতে।</p>
+  </section>
+
+  <section id="contact">
+    <h2 data-lang-key="contact">যোগাযোগ</h2>
+    <p data-lang-key="contact-desc">যদি কোনো প্রশ্ন থাকে, আমাদের সাথে যোগাযোগ করুন।</p>
+    <p>Email: support@jki1016.com<br />Phone: +880 1234 567890</p>
+  </section>
+</div>
+
+<footer>
+  <p>© ২০২৫ JKI1016. সর্বস্বত্ব সংরক্ষিত।</p>
+</footer>
+
+<script>
+  const langData = {
+    en: {
+      home: "Home",
+      games: "Games",
+      about: "About",
+      deposit: "Deposit",
+      withdraw: "Withdraw",
+      contact: "Contact",
+      welcome: "Welcome to JKI1016!",
+      intro: "Welcome to your favorite gaming site. Enjoy a variety of games here.",
+      "games-desc": "Our game collection includes slots, card games, and many more fun games.",
+      "about-desc": "JKI1016 is an entertainment gaming platform where your fun and security come first.",
+      "deposit-desc": "Easily add money to your account through various methods.","withdraw-desc": "Quickly and safely withdraw your winnings.",
+      "contact-desc": "If you have any questions, feel free to contact us."
+    },
+    bn: {
+      home: "হোম",
+      games: "গেমস",
+      about: "সম্পর্কে",
+      deposit: "ডিপোজিট",
+      withdraw: "উইদ্রো",
+      contact: "যোগাযোগ",
+      welcome: "স্বাগতম JKI1016-এ!",
+      intro: "আপনার প্রিয় গেমিং সাইটে স্বাগতম। এখানে আপনি বিভিন্ন ধরণের গেম উপভোগ করতে পারবেন।",
+      "games-desc": "আমাদের গেম কালেকশনে রয়েছে স্লট, কার্ড গেমস এবং আরও অনেক মজার গেম।",
+      "about-desc": "JKI1016 একটি বিনোদনমূলক গেমিং প্ল্যাটফর্ম যেখানে আপনার মজা ও নিরাপত্তা আমাদের প্রথম অগ্রাধিকার।",
+      "deposit-desc": "আপনি সহজেই আপনার অ্যাকাউন্টে টাকা যোগ করতে পারবেন বিভিন্ন পদ্ধতিতে।",
+      "withdraw-desc": "আপনি আপনার জয়লাভ সহজেই উত্তোলন করতে পারবেন দ্রুত ও নিরাপদ পদ্ধতিতে।",
+      "contact-desc": "যদি কোনো প্রশ্ন থাকে, আমাদের সাথে যোগাযোগ করুন।"
+    }
+  };
+
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang-key]').forEach(el => {
+      const key = el.getAttribute('data-lang-key');
+      el.textContent = langData[lang][key] || el.textContent;
+    });
+  }
+
+  // ডিফল্ট ভাষা বাংলা
+  setLang('bn');
+</script>
+</body>
+</html>
+```
+<body>
+<header>
+  <div class="container">
+    <h2>JKI1016 | গেমিং সাইট
+      <span class="lang-switch">
+        <button class="lang-btn" onclick="setLang('bn')">বাংলা</button>
+        <button class="lang-btn" onclick="setLang('en')">English</button>
+      </span>
+    </h2>
+    <nav>
+      <a href="#home" data-lang-key="home">হোম</a>
+      <a href="#games" data-lang-key="games">গেমস</a>
+      <a href="#about" data-lang-key="about">সম্পর্কে</a>
+      <a href="#deposit" data-lang-key="deposit">ডিপোজিট</a>
+      <a href="#withdraw" data-lang-key="withdraw">উইদ্রো</a>
+      <a href="#contact" data-lang-key="contact">যোগাযোগ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <section id="home">
+    <h1 data-lang-key="welcome">স্বাগতম JKI1016-এ!</h1>
+    <p data-lang-key="intro">আপনার প্রিয় গেমিং সাইটে স্বাগতম। এখানে আপনি বিভিন্ন ধরণের গেম উপভোগ করতে পারবেন।</p>
+  </section>
+
+  <section id="games">
+    <h2 data-lang-key="games">গেমস</h2>
+    <p data-lang-key="games-desc">আমাদের গেম কালেকশনে রয়েছে স্লট, কার্ড গেমস এবং আরও অনেক মজার গেম।</p>
+  </section>
+
+  <section id="about">
+    <h2 data-lang-key="about">সম্পর্কে</h2>
+    <p data-lang-key="about-desc">JKI1016 একটি বিনোদনমূলক গেমিং প্ল্যাটফর্ম যেখানে আপনার মজা ও নিরাপত্তা আমাদের প্রথম অগ্রাধিকার।</p>
+  </section>
