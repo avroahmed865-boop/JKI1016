@@ -1,0 +1,83 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Login Required</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  #loginBox {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 300px;
+  }
+  input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 12px 0;
+    box-sizing: border-box;
+  }
+  button {
+    background: #007bff;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:hover {
+    background: #0056b3;
+  }
+  .error {
+    color: red;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<div id="loginBox">
+  <h2>Login or Signup</h2>
+  <input type="text" id="phoneOrEmail" placeholder="Phone number or Email" />
+  <div class="error" id="errorMsg"></div>
+<button onclick="validateInput()">Continue</button>
+</div>
+
+<script>
+  function validateInput() {
+    const input = document.getElementById('phoneOrEmail').value.trim();
+    const errorMsg = document.getElementById('errorMsg');
+    if (!input) {
+      errorMsg.textContent = 'Please enter your phone number or email.';
+      return;
+    }
+    // Basic email regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+/;
+    // Basic phone number regex (digits only, length 7 to 15)
+    const phoneRegex = /^[0-9]7,15/;
+
+    if (emailRegex.test(input) || phoneRegex.test(input)) {
+      errorMsg.textContent = '';
+      // Redirect to your main site after login
+      window.location.href = "https://avroahmed865-boop.github.io/JKI1016/";
+    } else {
+      errorMsg.textContent = 'Please enter a valid phone number or email.';
+    }
+  }
+</script>
+
+</body>
+</html>
+```
